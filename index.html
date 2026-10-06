@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perjalanan Indonesia Menuju Kemerdekaan | Infografis</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Playfair+Display:wght@700&display=swap');
+
+        :root {
+            --merah: #ce1126;
+            --putih: #ffffff;
+            --emas: #f4c430;
+            --hitam: #1a1a1a;
+            --abu: #f5f5f5;
+            --gelap: #2c3e50;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            color: var(--hitam);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--merah) 0%, #9b0b1c 100%);
+            color: white;
+            text-align: center;
+            padding: 60px 20px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Flag_of_Indonesia.svg/1200px-Flag_of_Indonesia.svg.png') center/cover;
+            opacity: 0.08;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.25rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--emas);
+            color: var(--hitam);
+            padding: 8px 22px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-top: 20px;
+            letter-spacing: 1px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: -40px auto 60px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Section Card */
+        .section {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            margin-bottom: 50px;
+            overflow: hidden;
+            border-top: 8px solid var(--merah);
+        }
+
+        .section-header {
+            background: linear-gradient(90deg, var(--merah), #e74c3c);
+            color: white;
+            padding: 25px 35px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .section-number {
+            background: white;
+            color: var(--merah);
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        .section-header h2 {
+            font-size: 1.9rem;
+            font-weight: 700;
+        }
+
+        .section-body {
+            padding: 40px 35px;
+        }
+
+        /* Grid Items */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+        }
+
+        .card {
+            background: var(--abu);
+            border-radius: 16px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(206,17,38,0.15);
+            border-color: var(--merah);
+        }
+
+        .card h3 {
+            color: var(--merah);
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card h3 span {
+            background: var(--merah);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .card p {
+            font-size: 0.98rem;
+            color: #444;
+        }
+
+        /* Hero Images */
+        .hero-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 30px 0 10px;
+        }
+
+        .hero {
+            text-align: center;
+            width: 160px;
+        }
+
+        .hero img {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid var(--merah);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            transition: transform 0.3s;
+        }
+
+        .hero img:hover {
+            transform: scale(1.08);
+        }
+
+        .hero figcaption {
+            margin-top: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--gelap);
+        }
+
+        /* Timeline special */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--merah);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            background: white;
+            padding: 20px 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -30px;
+            top: 25px;
+            width: 18px;
+            height: 18px;
+            background: var(--emas);
+            border: 4px solid var(--merah);
+            border-radius: 50%;
+        }
+
+        .timeline-item strong {
+            color: var(--merah);
+            display: block;
+            margin-bottom: 6px;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--gelap);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 20px;
+        }
+
+        footer p {
+            opacity: 0.85;
+            font-size: 0.95rem;
+        }
+
+        .merdeka {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--emas);
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2rem; }
+            .section-header h2 { font-size: 1.5rem; }
+            .section-body { padding: 25px 20px; }
+            .hero { width: 130px; }
+            .hero img { width: 110px; height: 110px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <div class="badge">INFOGRAFIS SEJARAH</div>
+        <h1>Perjalanan Indonesia<br>Menuju Kemerdekaan</h1>
+        <p>Dari Pendudukan Jepang → Proklamasi → Pembentukan Pemerintahan Republik Indonesia</p>
+    </div>
+</header>
+
+<div class="container">
+
+    <!-- ==================== A. PENDUDUKAN JEPANG ==================== -->
+    <section class="section">
+        <div class="section-header">
+            <div class="section-number">A</div>
+            <h2>Pendudukan Jepang (1942 – 1945)</h2>
+        </div>
+        <div class="section-body">
+
+            <div class="hero-gallery">
+                <figure class="hero">
+                    <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Sukarno%2C_Sang_Saka_Melanglang_Djagad%2C_p12.jpg/250px-Sukarno%2C_Sang_Saka_Melanglang_Djagad%2C_p12.jpg?utm_source=id.wikipedia.org&utm_campaign=parser&utm_content=thumbnail" alt="Soekarno">
+                    <figcaption>Ir. Soekarno</figcaption>
+                </figure>
+                <figure class="hero">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR2SHQDSH9WrVam0wpNBLAogR1Vi9-jXvn-fPLHDanJaEyRYT3053w8mc5-OYCk5gbhDFK5PL25TycxxWqQhAgDAhCLxqwNPsNjsTL_Sk&s=10" alt="Mohammad Hatta">
+                    <figcaption>Mohammad Hatta</figcaption>
+                </figure>
+                <figure class="hero">
+                    <img src="https://display.ub.ac.id/wp-content/uploads/2021/11/sutan-sjahrir-1-5808afa75f9e9e1b908d5faa47f50b4e_600x400.jpg" alt="Sultan Sjahrir">
+                    <figcaption>Sultan Sjahrir</figcaption>
+                </figure>
+            </div>
+
+            <div class="grid">
+                <div class="card">
+                    <h3><span>1</span> Kedatangan Jepang</h3>
+                    <p>Jepang mendarat di Tarakan (Kalimantan) pada Januari 1942, lalu menaklukkan Hindia Belanda dengan cepat. Pada 8 Maret 1942, Belanda menyerah tanpa syarat di Kalijati. Jepang menguasai seluruh Indonesia dengan slogan “Asia untuk Asia” dan “3A” (Jepang Cahaya Asia, Pelindung Asia, Pemimpin Asia).</p>
+                </div>
+
+                <div class="card">
+                    <h3><span>2</span> Kebijakan Jepang</h3>
+                    <p>Jepang menerapkan kebijakan militer yang keras: sistem romusha (kerja paksa), penyerahan padi wajib, pelarangan bahasa Belanda & Inggris, serta indoktrinasi semangat Bushido. Mereka juga membentuk pemerintahan militer (Gunseikan) dan memanfaatkan sumber daya Indonesia untuk perang Pasifik.</p>
+                </div>
+
+                <div class="card">
+                    <h3><span>3</span> Dampak bagi Rakyat</h3>
+                    <p>Rakyat menderita kelaparan, penyakit, dan kematian massal akibat romusha. Namun, Jepang juga membuka kesempatan pendidikan, pelatihan militer, dan organisasi massal yang kelak memperkuat semangat kemerdekaan. Bahasa Indonesia semakin luas digunakan.</p>
+                </div>
+
+                <div class="card">
+                    <h3><span>4</span> Organisasi Bentukan Jepang</h3>
+                    <p>
+                        • <strong>PUTERA</strong> (1943) – dipimpin Soekarno, Hatta, Ki Hajar, K.H. Mas Mansur<br>
+                        • <strong>Jawa Hokokai</strong> (1944)<br>
+                        • <strong>PETA</strong> (Pembela Tanah Air) – tentara sukarela<br>
+                        • <strong>Heiho</strong> – pembantu tentara Jepang<br>
+                        • <strong>Keibodan</strong> & <strong>Seinendan</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== B. PROKLAMASI ==================== -->
+    <section class="section">
+        <div class="section-header">
+            <div class="section-number">B</div>
+            <h2>Proklamasi Kemerdekaan</h2>
+        </div>
+        <div class="section-body">
+
+            <div class="hero-gallery">
+                <figure class="hero">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Bung_Tomo.jpg?utm_source=id.wikipedia.org&utm_campaign=index&utm_content=original" alt="Bung Tomo">
+                    <figcaption>Bung Tomo</figcaption>
+                </figure>
+                <figure class="hero">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Achmad-Soebardjo.jpg?utm_source=id.wikipedia.org&utm_campaign=index&utm_content=original" alt="Ahmad Soebardjo">
+                    <figcaption>Ahmad Soebardjo</figcaption>
+                </figure>
+                <figure class="hero">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfxhYBROPf5D0fuShu8fcAavYF8dnfynBashuH0boq8e2pqYhWx44Aj91iM7ZkKgRlJu7pQVG2FUs89KiqGJSklXyFz3maCoRW7n6aQQ&s=10" alt="Fatmawati">
+                    <figcaption>Fatmawati</figcaption>
+                </figure>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <strong>Kekalahan Jepang</strong>
+                    <p>Setelah Bom Atom Hiroshima (6 Agustus) dan Nagasaki (9 Agustus), Jepang menyerah kepada Sekutu pada 15 Agustus 1945. Kekosongan kekuasaan terjadi di Indonesia. Golongan muda mendesak Soekarno-Hatta segera memproklamasikan kemerdekaan.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <strong>Peristiwa Rengasdengklok (16 Agustus 1945)</strong>
+                    <p>Golongan muda (Wikana, Chaerul Saleh, Sukarni, dkk) “menculik” Soekarno dan Hatta ke Rengasdengklok, Karawang, agar terhindar dari pengaruh Jepang dan segera menyatakan kemerdekaan. Malam harinya mereka kembali ke Jakarta setelah mendapat jaminan dari Ahmad Soebardjo.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <strong>Penyusunan Teks Proklamasi</strong>
+                    <p>Di rumah Laksamana Maeda (Jalan Imam Bonjol), Soekarno, Hatta, dan Ahmad Soebardjo merumuskan teks Proklamasi. Naskah ditulis tangan oleh Soekarno, kemudian diketik oleh Sayuti Melik. Sukarni mengusulkan agar yang menandatangani hanya Soekarno-Hatta “atas nama bangsa Indonesia”.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <strong>Pembacaan Proklamasi 17 Agustus 1945</strong>
+                    <p>Pukul 10.00 WIB, di halaman rumah Soekarno (Jl. Pegangsaan Timur 56), Proklamasi dibacakan oleh Ir. Soekarno didampingi Mohammad Hatta. Bendera Merah Putih yang dijahit Fatmawati dikibarkan oleh Suhud dan Latief Hendraningrat. Lagu Indonesia Raya dikumandangkan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== C. PEMBENTUKAN PEMERINTAHAN ==================== -->
+    <section class="section">
+        <div class="section-header">
+            <div class="section-number">C</div>
+            <h2>Pembentukan Pemerintahan Indonesia</h2>
+        </div>
+        <div class="section-body">
+
+            <div class="grid">
+                <div class="card">
+                    <h3><span>1</span> Pengesahan UUD 1945</h3>
+                    <p>Pada 18 Agustus 1945, PPKI (Panitia Persiapan Kemerdekaan Indonesia) mengesahkan Undang-Undang Dasar 1945 sebagai konstitusi negara. UUD 1945 terdiri dari Pembukaan dan Batang Tubuh (16 bab, 37 pasal, 4 pasal Aturan Peralihan, dan 2 ayat Aturan Tambahan).</p>
+                </div>
+
+                <div class="card">
+                    <h3><span>2</span> Presiden & Wakil Presiden</h3>
+                    <p>PPKI memilih secara aklamasi:<br>
+                    • <strong>Ir. Soekarno</strong> sebagai Presiden<br>
+                    • <strong>Drs. Mohammad Hatta</strong> sebagai Wakil Presiden<br>
+                    Keduanya dilantik pada hari yang sama.</p>
+                </div>
+
+                <div class="card">
+                    <h3><span>3</span> Pembentukan Kementerian</h3>
+                    <p>Pada 19 Agustus 1945 dibentuk 12 kementerian pertama (Kemarin sekarang disebut Kabinet Presidential). Beberapa menteri awal: Ahmad Soebardjo (Luar Negeri), Soerjadi (Kehakiman), Abikoesno Tjokrosoejoso (Perhubungan), dll.</p>
+                </div>
+
+                <div class="card">
+                    <h3><span>4</span> Pembentukan KNIP</h3>
+                    <p>Komite Nasional Indonesia Pusat (KNIP) dibentuk sebagai badan legislatif sementara sebelum adanya DPR dan MPR. KNIP diresmikan 29 Agustus 1945 dengan ketua Mr. Kasman Singodimedjo. Nantinya KNIP diberi kekuasaan legislatif penuh melalui Maklumat X (16 Oktober 1945).</p>
+                </div>
+
+                <div class="card" style="grid-column: 1 / -1;">
+                    <h3><span>5</span> Pembentukan Pemerintahan Daerah</h3>
+                    <p>Indonesia dibagi menjadi 8 provinsi: Sumatera, Jawa Barat, Jawa Tengah, Jawa Timur, Kalimantan, Sulawesi, Maluku, dan Sunda Kecil. Setiap provinsi dipimpin oleh seorang Gubernur yang diangkat oleh Presiden. Di tingkat residensi dan kabupaten juga dibentuk pemerintahan lokal untuk mengisi kekosongan kekuasaan setelah Jepang kalah.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    <div class="merdeka">MERDEKA!</div>
+    <p>Infografis ini dibuat untuk memenuhi Tugas Proyek ASTS<br>
+    “Perjalanan Indonesia Menuju Kemerdekaan”</p>
+    <p style="margin-top:15px; font-size:0.85rem; opacity:0.7;">
+        Sumber gambar: Wikimedia Commons (domain publik)
+    </p>
+</footer>
+
+</body>
+</html>
